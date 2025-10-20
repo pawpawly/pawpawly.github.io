@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import ProfileCard from './ProfileCard'
+import profileImage from '../assets/profile.png'
 
 export default function About() {
   return (
@@ -57,8 +58,8 @@ export default function About() {
               className="flex justify-center"
             >
               <ProfileCard
-                avatarUrl="/src/assets/profile.png"
-                miniAvatarUrl="/src/assets/profile.png"
+                avatarUrl={profileImage}
+                miniAvatarUrl={profileImage}
                 name="Frontend Developer"
                 title="React Developer"
                 handle="muhganangrmdhn"
