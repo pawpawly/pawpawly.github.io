@@ -17,6 +17,9 @@ export default defineConfig({
     },
   },
   build: {
+    outDir: 'docs',
+    assetsDir: 'assets',
+    emptyOutDir: true,
     commonjsOptions: {
       include: [/react-bits/, /node_modules/],
       transformMixedEsModules: true,
