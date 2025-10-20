@@ -57,8 +57,8 @@ export default function About() {
               className="flex justify-center"
             >
               <ProfileCard
-                avatarUrl="/src/assets/profile.JPG"
-                miniAvatarUrl="/src/assets/profile.JPG"
+                avatarUrl="/src/assets/profile.png"
+                miniAvatarUrl="/src/assets/profile.png"
                 name="Frontend Developer"
                 title="React Developer"
                 handle="muhganangrmdhn"
