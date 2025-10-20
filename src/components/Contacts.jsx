@@ -1,0 +1,128 @@
+import React from 'react'
+import { motion } from 'framer-motion'
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa'
+
+export default function Contacts(){
+  const contactInfo = [
+    {
+      icon: FaEnvelope,
+      title: 'Email',
+      value: 'rbfamilysmd@gmail.com',
+      color: 'text-red-400'
+    },
+    {
+      icon: FaPhone,
+      title: 'Phone',
+      value: '+62 882-5809-3431',
+      color: 'text-green-400'
+    },
+    {
+      icon: FaMapMarkerAlt,
+      title: 'Location',
+      value: 'Banjarmasin, Indonesia',
+      color: 'text-blue-400'
+    }
+  ]
+
+  const socialLinks = [
+    {
+      icon: FaGithub,
+      name: 'GitHub',
+      url: 'https://github.com/pawpawly',
+      color: 'text-gray-400 hover:text-white'
+    },
+    {
+      icon: FaLinkedin,
+      name: 'LinkedIn',
+      url: 'https://www.linkedin.com/in/muhammad-ganang-ramadhan-563380331/',
+      color: 'text-gray-400 hover:text-blue-400'
+    },
+    {
+      icon: FaInstagram,
+      name: 'Instagram',
+      url: 'https://instagram.com/mhganangrmdhn',
+      color: 'text-gray-400 hover:text-pink-400'
+    }
+  ]
+
+  return (
+    <section id="contact" className="py-20">
+      <div className="max-w-6xl mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl font-bold mb-4">Get In Touch</h2>
+          <p className="text-gray-400 max-w-2xl mx-auto">
+            Ready to work together? Let's discuss your next project and bring your ideas to life.
+          </p>
+        </motion.div>
+
+        <div className="max-w-4xl mx-auto">
+          {/* Contact Information */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="space-y-8"
+          >
+            <div className="text-center mb-12">
+              <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {contactInfo.map((contact, index) => (
+                  <motion.div
+                    key={contact.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.05 }}
+                    className="flex flex-col items-center text-center p-6 bg-black rounded-xl border border-white/10 ring-1 ring-white/10 hover:border-[var(--accent)] hover:ring-[var(--accent)] transition-all duration-300 group"
+                  >
+                    <div className={`p-4 rounded-lg bg-black border border-white/10 group-hover:border-[var(--accent)] transition-colors duration-300 ${contact.color} mb-4`}>
+                      <contact.icon className="w-8 h-8" />
+                    </div>
+                    <h4 className="font-semibold text-gray-300 group-hover:text-white transition-colors duration-300 mb-2">
+                      {contact.title}
+                    </h4>
+                    <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300 text-sm">
+                      {contact.value}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Social Links */}
+            <div className="text-center">
+              <h4 className="text-xl font-semibold mb-6">Follow Me</h4>
+              <div className="flex justify-center space-x-6">
+                {socialLinks.map((social, index) => (
+                  <motion.a
+                    key={social.name}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    className={`p-4 bg-black rounded-xl border border-white/10 ring-1 ring-white/10 hover:border-[var(--accent)] hover:ring-[var(--accent)] transition-all duration-300 ${social.color}`}
+                  >
+                    <social.icon className="w-8 h-8" />
+                  </motion.a>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  )
+}
