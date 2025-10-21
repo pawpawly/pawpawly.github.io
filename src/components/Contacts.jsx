@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa'
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin, FaInstagram, FaDiscord, FaSpotify } from 'react-icons/fa'
 
 export default function Contacts(){
   const contactInfo = [
@@ -42,6 +42,18 @@ export default function Contacts(){
       name: 'Instagram',
       url: 'https://instagram.com/mhganangrmdhn',
       color: 'text-gray-400 hover:text-pink-400'
+    },
+    {
+      icon: FaDiscord,
+      name: 'Discord',
+      url: 'https://discord.gg/3TKGWsnK',
+      color: 'text-gray-400 hover:text-indigo-400'
+    },
+    {
+      icon: FaSpotify,
+      name: 'Spotify',
+      url: 'https://open.spotify.com/user/sad5docqv5ndf0zd1na0hv5v5?si=itosZJlMQPSeXDDZSeqUaw',
+      color: 'text-gray-400 hover:text-green-400'
     }
   ]
 
@@ -99,7 +111,7 @@ export default function Contacts(){
 
             {/* Social Links */}
             <div className="text-center">
-              <h4 className="text-xl font-semibold mb-6">Follow Me</h4>
+              <h4 className="text-xl font-semibold mb-6">Connection with Me</h4>
               <div className="flex justify-center space-x-6">
                 {socialLinks.map((social, index) => (
                   <motion.a
