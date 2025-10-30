@@ -54,7 +54,7 @@ export default function Hero(){
   return (
     <section className="relative text-center min-h-screen flex flex-col justify-center overflow-hidden">
       {/* Orb background */}
-      <Orb />
+      <Orb hoverIntensity={2} />
       <div className="relative z-10">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
