@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import ProfileCard from './ProfileCard'
-import profileImage from '../assets/profile.png'
+import profileImage from '../assets/profile5.png'
 
 export default function About() {
   return (

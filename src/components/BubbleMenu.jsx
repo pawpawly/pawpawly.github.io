@@ -45,7 +45,7 @@ export default function BubbleMenu({
   className,
   style,
   menuAriaLabel = 'Toggle menu',
-  menuBg = 'rgba(255, 255, 255, 0.1)',
+  menuBg = 'rgba(0, 0, 0, 0.5)',
   menuContentColor = '#111',
   useFixedPosition = true, // Set to true for sticky behavior
   items,
@@ -80,6 +80,15 @@ export default function BubbleMenu({
     if (nextState) setShowOverlay(true);
     setIsMenuOpen(nextState);
     onMenuClick?.(nextState);
+  };
+
+  const handleLinkClick = (e, href) => {
+    e.preventDefault();
+    const targetElement = document.querySelector(href);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMenuOpen(false);
   };
 
   useEffect(() => {
@@ -224,7 +233,7 @@ export default function BubbleMenu({
           ].join(' ')}
           aria-label="Logo"
           style={{
-            background: 'rgba(255, 255, 255, 0.1)',
+            background: 'rgba(0, 0, 0, 0.5)',
             minHeight: '48px',
             borderRadius: '9999px',
             border: '1px solid #8b5cf6'
@@ -256,7 +265,7 @@ export default function BubbleMenu({
           aria-label={menuAriaLabel}
           aria-pressed={isMenuOpen}
           style={{ 
-            background: 'rgba(255, 255, 255, 0.1)',
+            background: 'rgba(0, 0, 0, 0.5)',
             border: '1px solid #8b5cf6'
           }}
         >
@@ -321,6 +330,7 @@ export default function BubbleMenu({
                 <a
                   role="menuitem"
                   href={item.href}
+                  onClick={(e) => handleLinkClick(e, item.href)}
                   aria-label={item.ariaLabel || item.label}
                   className={[
                     'pill-link',
