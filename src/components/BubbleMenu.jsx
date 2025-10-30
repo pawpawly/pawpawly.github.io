@@ -224,9 +224,10 @@ export default function BubbleMenu({
           ].join(' ')}
           aria-label="Logo"
           style={{
-            background: '#8b5cf6', // Purplish-blue background
+            background: 'rgba(255, 255, 255, 0.1)',
             minHeight: '48px',
-            borderRadius: '9999px'
+            borderRadius: '9999px',
+            border: '1px solid #8b5cf6'
           }}
         >
           <span
@@ -254,7 +255,10 @@ export default function BubbleMenu({
           onClick={handleToggle}
           aria-label={menuAriaLabel}
           aria-pressed={isMenuOpen}
-          style={{ background: '#8b5cf6' }}
+          style={{ 
+            background: 'rgba(255, 255, 255, 0.1)',
+            border: '1px solid #8b5cf6'
+          }}
         >
           <span
             className="menu-line block mx-auto rounded-[2px]"
