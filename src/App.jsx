@@ -18,7 +18,7 @@ export default function App() {
 
   const socialItems = [
     { label: 'GitHub', link: 'https://github.com/pawpawly' },
-    { label: 'LinkedIn', link: 'https://www.linkedin.com/in/fiqri-ardian-9423b8243/' },
+    { label: 'LinkedIn', link: 'https://www.linkedin.com/in/muhammad-ganang-ramadhan-563380331' },
   ];
 
   const handleItemClick = (link) => {
@@ -39,6 +39,7 @@ export default function App() {
         accentColor="#38bdf8"
         onItemClick={handleItemClick}
         isFixed={true}
+        openMenuButtonColor="#000"
       />
       <main>
         <section id="home">
