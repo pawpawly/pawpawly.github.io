@@ -16,6 +16,7 @@
 html, body{
   background: #000000;
   color: var(--fg);
+  overflow-x: hidden;
 }
 
 /* Remove ambient glows for pure black BG */

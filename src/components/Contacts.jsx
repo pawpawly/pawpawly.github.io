@@ -143,7 +143,7 @@ export default function Contacts(){
             {/* Social Links */}
             <div className="text-center">
               <h4 className="text-xl font-semibold mb-6">Connection with Me</h4>
-              <div className="flex justify-center space-x-6">
+              <div className="flex justify-center flex-wrap gap-4">
                 {socialLinks.map((social, index) => (
                   <motion.a
                     key={social.name}
